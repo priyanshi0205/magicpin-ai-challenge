@@ -1,0 +1,58 @@
+# Python cache / build outputs
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local logs and runtime files
+*.log
+*.err
+*.pid
+*.tmp
+*.bak
+
+# Judge / local temporary outputs
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Keep challenge and deploy artifacts tracked:
+# bot.py
+# README.md
+# requirements.txt
+# Dockerfile
+# Procfile
+# render.yaml
+# challenge-brief.md
+# challenge-testing-brief.md
+# engagement-design.md
+# engagement-research.md
+# judge_simulator.py
+# smoke_test.py
+# dataset/
+# examples/
+# expanded/
+# submission.jsonl
