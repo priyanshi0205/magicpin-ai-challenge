@@ -25,27 +25,28 @@ $env:BOT_URL="http://localhost:8090"
 python smoke_test.py
 ```
 
-## Koyeb Deployment
+## Render Deployment
 
-This repo is configured for Koyeb using the included `Dockerfile`.
+This repo is configured for Render's free Python web service using `render.yaml`.
 
-Koyeb settings:
+Render settings:
 
 - **Deployment method**: GitHub
-- **Builder**: Dockerfile
-- **Instance**: Free
-- **Exposed port**: `8080`
-- **Protocol**: HTTP
-- **Route path**: `/`
-- **Environment variable**: `PORT=8080`
+- **Runtime**: Python
+- **Plan**: Free
+- **Build command**: `python -m py_compile bot.py`
+- **Start command**: `python bot.py --host 0.0.0.0 --port $PORT`
+- **Health check path**: `/v1/healthz`
 
 After deployment, submit only the public base URL, for example:
 
 ```text
-https://vera-magicpin-bot-yourname.koyeb.app
+https://vera-magicpin-bot.onrender.com
 ```
 
 Do not submit `/v1/healthz` or any endpoint suffix. The judge will call `/v1/context`, `/v1/tick`, `/v1/reply`, `/v1/healthz`, and `/v1/metadata` on that base URL.
+
+Note: Render free web services can sleep after inactivity. Before final submission, open `/v1/healthz` once and wait until it returns JSON, then submit the base URL.
 
 ## Tradeoffs
 

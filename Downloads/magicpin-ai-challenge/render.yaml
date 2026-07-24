@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: vera-magicpin-bot
+    runtime: python
+    plan: free
+    buildCommand: "python -m py_compile bot.py"
+    startCommand: "python bot.py --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /v1/healthz
