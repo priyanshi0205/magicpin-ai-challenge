@@ -646,10 +646,10 @@ class VeraHandler(BaseHTTPRequestHandler):
         if path == "/v1/metadata":
             self._send_json({
                 "team_name": TEAM_NAME,
-                "team_members": ["Naren", "Codex"],
+                "team_members": ["Priyanshi Khataniya"],
                 "model": "deterministic-standard-library-composer",
                 "approach": "stateful in-memory context store with trigger-kind routing and grounded templates",
-                "contact_email": "not-provided@example.com",
+                "contact_email": "mail.priyanshi.khataniya@gmail.com",
                 "version": "1.0.0",
                 "submitted_at": "2026-07-23T00:00:00Z",
             })
